@@ -1,0 +1,82 @@
+{
+  "csalad": [
+    {
+      "nev": "Nagy Anna",
+      "szuletesi datum": "1990-05-30",
+      "szuletesi hely": "Budapest",
+      "anyja neve": "Kovács Mária",
+      "apja neve": "Nagy József"
+    },
+    {
+      "nev": "Nagy Zsolt",
+      "szuletesi datum": "1995-10-15",
+      "szuletesi hely": "Budapest",
+      "anyja neve": "Kovács Mária",
+      "apja neve": "Nagy József"
+    },
+    {
+      "nev": "Kovács Mária",
+      "szuletesi datum": "1965-04-03",
+      "szuletesi hely": "Szolnok",
+      "anyja neve": "Tóth Ilona",
+      "apja neve": "Kovács Tibor"
+    },
+    {
+      "nev": "Nagy József",
+      "szuletesi datum": "1963-01-25",
+      "szuletesi hely": "Szolnok",
+      "anyja neve": "Kis Terézia",
+      "apja neve": "Nagy István"
+    },
+    {
+      "nev": "Varga Tamás",
+      "szuletesi datum": "2013-08-10",
+      "szuletesi hely": "Budapest",
+      "anyja neve": "Nagy Anna",
+      "apja neve": "Varga Gergely"
+    },
+    {
+      "nev": "Nagy Kata",
+      "szuletesi datum": "2019-09-01",
+      "szuletesi hely": "Budapest",
+      "anyja neve": "Kováts Fruzsina",
+      "apja neve": "Nagy Zsolt"
+    },
+    {
+      "nev": "Kovács Tibor",
+      "szuletesi datum": "1945-08-17",
+      "szuletesi hely": "Székesfehérvár",
+      "anyja neve": "Szabó Liliána",
+      "apja neve": "Kovács János",
+      "halal ideje": "2020-11-28",
+      "halal helye": "Szolnok"
+    },
+    {
+      "nev": "Tóth Ilona",
+      "szuletesi datum": "1947-07-10",
+      "szuletesi hely": "Székesfehérvár",
+      "anyja neve": "Balogh Katalin",
+      "apja neve": "Tóth Károly",
+      "halal ideje": "2022-03-30",
+      "halal helye": "Szolnok" 
+    },
+    {
+      "nev": "Kis Terézia",
+      "szuletesi datum": "1945-11-15",
+      "szuletesi hely": "Kecskemét",
+      "anyja neve": "Horváth Erzsébet",
+      "apja neve": "Kis Sándor",
+      "halal ideje": "2019-05-10",
+      "halal helye": "Szolnok" 
+    },
+    {
+      "nev": "Nagy István",
+      "szuletesi datum": "1943-02-11",
+      "szuletesi hely": "Kecskemét",
+      "anyja neve": "Molnár Róza",
+      "apja neve": "Nagy Bálint",
+      "halal ideje": "2021-09-03",
+      "halal helye": "Szolnok" 
+    }
+  ]
+}
