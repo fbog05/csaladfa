@@ -1,7 +1,7 @@
 {
   "csalad": [
     {
-      "id": 7,
+      "id": "7",
       "nev": "Nagy Anna",
       "szuletesidatum": "1990-05-30",
       "szuletesihely": "Budapest",
@@ -9,7 +9,7 @@
       "apjaneve": "Nagy József"
     },
     {
-      "id": 8,
+      "id": "8",
       "nev": "Nagy Zsolt",
       "szuletesidatum": "1995-10-15",
       "szuletesihely": "Budapest",
@@ -17,7 +17,7 @@
       "apjaneve": "Nagy József"
     },
     {
-      "id": 5,
+      "id": "5",
       "nev": "Kovács Mária",
       "szuletesidatum": "1965-04-03",
       "szuletesihely": "Szolnok",
@@ -25,7 +25,7 @@
       "apjaneve": "Kovács Tibor"
     },
     {
-      "id": 6,
+      "id": "6",
       "nev": "Nagy József",
       "szuletesidatum": "1963-01-25",
       "szuletesihely": "Szolnok",
@@ -33,7 +33,7 @@
       "apjaneve": "Nagy István"
     },
     {
-      "id": 9,
+      "id": "9",
       "nev": "Varga Tamás",
       "szuletesidatum": "2013-08-10",
       "szuletesihely": "Budapest",
@@ -41,7 +41,7 @@
       "apjaneve": "Varga Gergely"
     },
     {
-      "id": 10,
+      "id": "10",
       "nev": "Nagy Kata",
       "szuletesidatum": "2019-09-01",
       "szuletesihely": "Budapest",
@@ -49,7 +49,7 @@
       "apjaneve": "Nagy Zsolt"
     },
     {
-      "id": 1,
+      "id": "1",
       "nev": "Kovács Tibor",
       "szuletesidatum": "1945-08-17",
       "szuletesihely": "Székesfehérvár",
@@ -59,34 +59,36 @@
       "halalhelye": "Szolnok"
     },
     {
-      "id": 2,
+      "id": "2",
       "nev": "Tóth Ilona",
       "szuletesidatum": "1947-07-10",
       "szuletesihely": "Székesfehérvár",
       "anyjaneve": "Balogh Katalin",
       "apjaneve": "Tóth Károly",
       "halalideje": "2022-03-30",
-      "halalhelye": "Szolnok" 
+      "halalhelye": "Szolnok"
     },
     {
-      "id": 3,
+      "id": "3",
       "nev": "Kis Terézia",
-      "szuletesidatum": "1945-11-15",
+      "szuletesidatum": "1945-11-13",
       "szuletesihely": "Kecskemét",
       "anyjaneve": "Horváth Erzsébet",
       "apjaneve": "Kis Sándor",
       "halalideje": "2019-05-10",
-      "halalhelye": "Szolnok" 
+      "halalhelye": "Szolnok",
+      "editable": true
     },
     {
-      "id": 4,
+      "id": "5baf",
       "nev": "Nagy István",
-      "szuletesidatum": "1943-02-11",
+      "szuletesidatum": "1943-02-15",
       "szuletesihely": "Kecskemét",
       "anyjaneve": "Molnár Róza",
       "apjaneve": "Nagy Bálint",
-      "halalideje": "2021-09-03",
-      "halalhelye": "Szolnok" 
+      "halalideje": "2021-09-30",
+      "halalhelye": "Szolnok",
+      "editable": true
     }
   ]
 }

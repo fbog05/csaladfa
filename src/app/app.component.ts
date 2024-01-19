@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from './api.service';
-import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -11,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 export class AppComponent implements OnInit{
     csalad: any;
   title = 'Csaladfa';
-  private apiUrl = 'http://localhost:3000/csalad';
+  private url = 'http://localhost:3000/csalad';
 
   constructor(private http:HttpClient, private api:ApiService) { }
 
@@ -19,15 +18,53 @@ export class AppComponent implements OnInit{
     this.getCsalad();
   }
 
-  getCsalad(){
+  getCsalad() {
     this.api.getCsalad().subscribe({
-      next: data => {
-        this.csalad = data;
-      }
-    })
+      next: (data) => {
+        this.csalad = data.map((csalad:any) => ({
+          ...csalad,
+          editable: false
+        }));
+      },
+    });
   }
 
-  deleteCsalad(id:number):Observable<any>{
-    return this.http.delete(`${this.apiUrl}/${id}`);
+  toggleEdit(csalad:any) {
+    csalad.editable = !csalad.editable;
+  }
+
+  saveRow(csalad:any){
+    if (csalad.id) {
+      this.http.put(`${this.url}/${csalad.id}`, csalad).subscribe(() => {
+        csalad.editable = false;
+      });
+    } else {
+      this.http.post(this.url, csalad).subscribe(() => {
+        csalad.editable = false;
+        this.getCsalad();
+      });
+    }
+  }
+
+  deleteCsalad(rowId:any) {
+    this.http.delete(`${this.url}/${rowId}`).subscribe(
+      () => {
+        this.getCsalad();
+      }
+    );
+  }
+
+  addRow() {
+    const newRow = {
+      nev: '',
+      szuletesidatum: '',
+      szuletesihely: '',
+      anyjaneve: '',
+      apjaneve: '',
+      halalideje: '',
+      halalhelye: '',
+      editable: true
+    };
+    this.csalad.push(newRow);
   }
 }

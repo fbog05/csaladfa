@@ -1,28 +1,61 @@
-<h1 class="text-center m-3">Családfa</h1>
-
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th>Név</th>
-            <th>Születési név</th>
-            <th>Születési hely</th>
-            <th>Anyja neve</th>
-            <th>Apja neve</th>
-            <th>Halál ideje</th>
-            <th>Halál helye</th>
-            <th>Törlés</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let csalad of csalad">
-            <td>{{csalad.nev}}</td>
-            <td>{{csalad.szuletesidatum}}</td>
-            <td>{{csalad.szuletesihely}}</td>
-            <td>{{csalad.anyjaneve}}</td>
-            <td>{{csalad.apjaneve}}</td>
-            <td>{{csalad.halalideje}}</td>
-            <td>{{csalad.halalhelye}}</td>
-            <td><button class="btn btn-danger" (click)="deleteCsalad(csalad.id)">Delete</button></td>
-        </tr>
-    </tbody>
-</table>
+<div>
+        <div>
+            <h1 class="text-center m-3">Családfa</h1>
+            <button class="btn btn-warning text-right" (click)="addRow()">Hozzáadás</button>
+        </div>
+    
+        <table class="table table-dark table-bordered table-striped">
+            <thead class="text-center">
+              <tr>
+                <th>Név</th>
+                <th>Születési név</th>
+                <th>Születési hely</th>
+                <th>Anyja neve</th>
+                <th>Apja neve</th>
+                <th>Halál ideje</th>
+                <th>Halál helye</th>
+                <th>Módosítás</th>
+                <th>Törlés</th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr *ngFor="let csalad of csalad">
+                <td>
+                  <ng-container *ngIf="!csalad.editable">{{ csalad.nev }}</ng-container>
+                  <input type="text" *ngIf="csalad.editable" [(ngModel)]="csalad.nev"/>
+                </td>
+                <td>
+                  <ng-container *ngIf="!csalad.editable">{{ csalad.szuletesidatum }}</ng-container>
+                  <input type="text" *ngIf="csalad.editable" [(ngModel)]="csalad.szuletesidatum"/>
+                </td>
+                <td>
+                  <ng-container *ngIf="!csalad.editable">{{ csalad.szuletesihely }}</ng-container>
+                  <input type="text" *ngIf="csalad.editable" [(ngModel)]="csalad.szuletesihely"/>
+                </td>
+                <td>
+                  <ng-container *ngIf="!csalad.editable">{{ csalad.anyjaneve }}</ng-container>
+                  <input type="text" *ngIf="csalad.editable" [(ngModel)]="csalad.anyjaneve"/>
+                </td>
+                <td>
+                  <ng-container *ngIf="!csalad.editable">{{ csalad.apjaneve }}</ng-container>
+                  <input type="text" *ngIf="csalad.editable" [(ngModel)]="csalad.apjaneve"/>
+                </td>
+                <td>
+                  <ng-container *ngIf="!csalad.editable">{{ csalad.halalideje }}</ng-container>
+                  <input type="text" *ngIf="csalad.editable" [(ngModel)]="csalad.halalideje"/>
+                </td>
+                <td>
+                  <ng-container *ngIf="!csalad.editable">{{ csalad.halalhelye }}</ng-container>
+                  <input type="text" *ngIf="csalad.editable" [(ngModel)]="csalad.halalhelye"/>
+                </td>
+                <td>
+                  <button class="btn btn-primary" *ngIf="!csalad.editable" (click)="toggleEdit(csalad)">Szerkesztés</button>
+                  <button class="btn btn-success" *ngIf="csalad.editable" (click)="saveRow(csalad)">Mentés</button>
+                </td>
+                <td>
+                  <button class="btn btn-danger" (click)="deleteCsalad(csalad.id)">Törlés</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+</div>
