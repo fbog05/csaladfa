@@ -6,5 +6,5 @@
 
 ## Json szerver telepítése és indítása
 
-`npm install --save-dev json-server`
+`npm install --save-dev json-server`  
 `npm run api`
