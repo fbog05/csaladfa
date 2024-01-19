@@ -1,54 +1,59 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import FamilyTree from "@balkangraph/familytree.js";
+import { ApiService } from './api.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+    csalad: any;
   title = 'Csaladfa';
-  constructor() { }
+  constructor(private api:ApiService) { }
 
   ngOnInit() {
-      const tree = document.getElementById('tree');
-      if (tree) {
-          var family = new FamilyTree(tree, {
-            enableSearch: false,
-            mouseScrool: FamilyTree.action.none,
-            scaleInitial: FamilyTree.match.boundary,
-            nodeBinding: {
-                field_0: "name"
-            },
-            min: true,
-            editForm: {
-                titleBinding: "name",
-                generateElementsFromFields: false,
-                elements: [
-                    { type: 'textbox', label: 'Teljes név', binding: 'name' },
-        
-                    [
-                        { type: 'date', label: 'Születési dátum', binding: 'birthDate' },
-                        { type: 'textbox', label: 'Születés helye', binding: 'birthCity' }
-                    ],
-                    [
-                        { type: 'date', label: 'Halál ideje', binding: 'deathDate' },
-                        { type: 'textbox', label: 'Halál helye', binding: 'deathCity' }
-                    ],
+
+    this.getCsalad();
+
+    const tree = document.getElementById('tree');
+    if (tree) {
+        var family = new FamilyTree(tree, {
+        enableSearch: false,
+        mouseScrool: FamilyTree.action.none,
+        scaleInitial: FamilyTree.match.boundary,
+        nodeBinding: {
+            field_0: "name"
+        },
+        min: true,
+        editForm: {
+            titleBinding: "name",
+            generateElementsFromFields: false,
+            elements: [
+                { type: 'textbox', label: 'Teljes név', binding: 'name' },
+    
+                [
+                    { type: 'date', label: 'Születési dátum', binding: 'birthDate' },
+                    { type: 'textbox', label: 'Születés helye', binding: 'birthCity' }
                 ],
-                buttons: {
-                    edit: {
-                        icon: FamilyTree.icon.edit(24, 24, '#fff'),
-                        text: 'Edit',
-                        hideIfEditMode: true,
-                        hideIfDetailsMode: false
-                    },
-                    share: null,
-                    pdf: null,
-                    remove: null
-                }
+                [
+                    { type: 'date', label: 'Halál ideje', binding: 'deathDate' },
+                    { type: 'textbox', label: 'Halál helye', binding: 'deathCity' }
+                ],
+            ],
+            buttons: {
+                edit: {
+                    icon: FamilyTree.icon.edit(24, 24, '#fff'),
+                    text: 'Edit',
+                    hideIfEditMode: true,
+                    hideIfDetailsMode: false
+                },
+                share: null,
+                pdf: null,
+                remove: null
             }
-          });
+        }
+        });
 
           family.load([
               { id: 1, pids: [2], name: "Kovács János", gender: "male"},
@@ -73,5 +78,13 @@ export class AppComponent {
               { id: 20, mid: 16, fid: 18, name: "Nagy Kata", gender: "female", birthDate: "2019-09-01", birthCity: "Budapest" }
           ]);
       }
+  }
+
+  getCsalad(){
+    this.api.getCsalad().subscribe({
+        next: data => {
+            this.csalad = data;
+        }
+    })
   }
 }

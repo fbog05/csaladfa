@@ -1,1 +1,17 @@
-<div id="tree"></div>
+<!-- <div id="tree"></div> -->
+<table class="table">
+    <tr>
+        <th>Név</th>
+        <th>Születési név</th>
+        <th>Születési hely</th>
+        <th>Anyja neve</th>
+        <th>Apja neve</th>
+    </tr>
+    <tr *ngFor="let csalad of csalad">
+        <td>{{csalad.nev}}</td>
+        <td>{{csalad.szuletesidatum}}</td>
+        <td>{{csalad.szuletesihely}}</td>
+        <td>{{csalad.anyjaneve}}</td>
+        <td>{{csalad.apjaneve}}</td>
+    </tr>
+</table>
